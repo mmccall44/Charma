@@ -31,15 +31,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Charma</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href=https://github.com/piland/Charma.git"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/piland/Charma.git">View Demo</a>
+    Geographical Service Application for UNCC students and faculty
   </p>
 </div>
 
@@ -80,10 +75,10 @@ Charma is an android application that provides geographical locations of the Uni
 
 ### Built With
 
-* [![Android Studio][AndroidStudioLogo][android-url]
-* [![Compose][Jetpack Compose-logo]][compose-url]
-* [![GoogleMapsAPI][GoogleMaps-logo][GoogleMapsAPI-url]
-* [![DuoAPI][DuoPush-logo][DuoPush-url]
+* Android Studio ...Need to add picture and link
+* Jetpack Compose ...Need to add picture and link
+* Google Maps Api ...Need to add picture and link
+* Duo Api ...Need to add picture and link
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
