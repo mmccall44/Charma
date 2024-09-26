@@ -118,10 +118,15 @@ Only people with valid UNCC emails will be able to use this project without any 
 ## Contact
 
 Ethan Piland - pilandethan@gmail.com
+<br>
 Jason Lindsey - ...
+<br>
 Trevor Portillo - ...
+<br>
 Wuilmer Velasquez - ...
+<br>
 Matthew McCall - ...
+<br>
 
 Project Link: [github]
 
