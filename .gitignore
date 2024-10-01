@@ -13,4 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-/app/api/endpoints/
+/app/api/endpoints/DuoAuth.kt
