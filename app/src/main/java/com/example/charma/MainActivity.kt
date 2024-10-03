@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
@@ -15,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.charma.ui.theme.CharmaTheme
@@ -47,6 +49,7 @@ class MainActivity : ComponentActivity()
 @Composable
 fun MainContent(name: String, modifier: Modifier = Modifier)
 {
+
     // Set initial camera position for Google Maps
     val cameraPositionState = rememberCameraPositionState {
         position = com.google.android.gms.maps.model.CameraPosition.fromLatLngZoom(LatLng(35.3076, -80.7351), 16f)
@@ -81,7 +84,7 @@ fun MainContent(name: String, modifier: Modifier = Modifier)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(start = 4.dp, end = 4.dp, bottom = 8.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 )
                 {
@@ -133,49 +136,61 @@ fun MainContent(name: String, modifier: Modifier = Modifier)
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(16.dp),
+                    .padding(start = 4.dp, end = 4.dp, bottom = 24.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
-            )
-            {
+            ) {
                 Button(
                     onClick = { /* TODO: Handle Search action */ },
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(horizontal = 2.dp),
                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                         containerColor = UNCCGreen // Set to UNCC Green
                     )
-                )
-                {
+                ) {
                     Text(text = "Search")
                 }
 
                 Button(
-                    onClick =
-                    { /* TODO: Handle Favorites action */ },
+                    onClick = { /* TODO: Handle Favorites action */ },
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(horizontal = 2.dp),
                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                         containerColor = UNCCGreen
                     )
-                )
-                {
+                ) {
                     Text(text = "Favorites")
                 }
 
                 Button(
-                    onClick =
-                    {
+                    onClick = {
                         // Toggle visibility of emergency options
                         showEmergencyOptions = !showEmergencyOptions
                     },
-                    // Set to red for Emergencies
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(horizontal = 2.dp),
                     colors = androidx.compose.material3.ButtonDefaults.buttonColors(
                         containerColor = Color.Red
                     )
-                )
-                {
+                ) {
                     Text(text = "Emergencies")
                 }
             }
         }
+        Image(
+            painter = painterResource(id = R.drawable.uncclogo),
+            contentDescription = "UNCC Logo",
+            modifier = Modifier
+                .padding(16.dp)
+                .size(64.dp)
+                .align(Alignment.TopStart)
+        )
     }
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
