@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,6 +43,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.charma.popup.ForgotPassword
+import com.example.charma.popup.RegisterPopup
 import com.example.charma.ui.theme.CharmaTheme
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
@@ -101,6 +104,10 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
 
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
+
+        // Popup State
+        var showRegisterPopup by remember { mutableStateOf(false) }
+        var showForgotPasswordPopup by remember { mutableStateOf(false)}
 
         Column(
             modifier = Modifier
@@ -173,27 +180,35 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             Button(
                 onClick = {
                     // Replace with actual login logic
-                    if (email.isNotEmpty() && password.isNotEmpty()) {
-                        onLoginSuccess()
-                    }
+                    showRegisterPopup = true
                 },
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = NinerGold
                 )
             ) {
-                Text(text = "Register Account")
+                Text(text = "Create Account")
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text =  buildAnnotatedString {
+                text = buildAnnotatedString {
                     append("Forgot your password?")
                 },
-                style = androidx.compose.ui.text.TextStyle(fontSize = 12.sp)
+                style = androidx.compose.ui.text.TextStyle(fontSize = 12.sp),
+                modifier = Modifier.clickable {
+                    showForgotPasswordPopup = true // Show popup when clicked
+                }
             )
 
+        }
+
+        if (showRegisterPopup) {
+            RegisterPopup (onDismissRequest = { showRegisterPopup = false})
+        }
+        if (showForgotPasswordPopup) {
+            ForgotPassword (onDismissRequest = { showForgotPasswordPopup = false})
         }
     }
 }
