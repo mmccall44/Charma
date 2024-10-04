@@ -117,23 +117,13 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Image (
-                    painter = painterResource(id = R.drawable.uncclogo),
-                    contentDescription = "",
-                    modifier = Modifier.size(100.dp)
+            Image (
+                painter = painterResource(id = R.drawable.charmalogo),
+                contentDescription = "",
+                modifier = Modifier.size(200.dp),
                 )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(text = "HARMA", Modifier
-                    .scale(2f))
-            }
 
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(12.dp))
 
             // Username field
             TextField(
