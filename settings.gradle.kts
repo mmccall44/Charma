@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Charma"
 include(":app")
- 
+include(":core-ui")
+include(":core-ui:mfa-ui")
