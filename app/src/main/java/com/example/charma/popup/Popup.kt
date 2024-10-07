@@ -29,10 +29,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import com.example.charma.NinerGold
-import com.example.charma.QuartzWhite
 import com.example.charma.R
-import com.example.charma.UNCCGreen
+import com.example.charma.ui.theme.NinerGold
+import com.example.charma.ui.theme.QuartzWhite
+import com.example.charma.ui.theme.UNCCGreen
 
 @Composable
 fun RegisterPopup(onDismissRequest: () -> Unit) {
