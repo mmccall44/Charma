@@ -119,7 +119,7 @@ Only people with valid UNCC emails will be able to use this project without any 
 
 Ethan Piland - pilandethan@gmail.com
 <br>
-Jason Lindsey - ...
+Jason Lindsey - novasquadcpu@gmail.com
 <br>
 Trevor Portillo - newtrevord@gmail.com
 <br>
