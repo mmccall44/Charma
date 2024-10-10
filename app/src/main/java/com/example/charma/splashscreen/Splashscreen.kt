@@ -40,7 +40,7 @@ import com.example.charma.ui.theme.UNCCGreen
 
 // region Login
 @Composable
-fun LoginScreen(onLoginSuccess: () -> Unit) {
+fun LoginScreen(onLoginSuccess: (String, String) -> Unit, onRegisterClick: () -> Unit, createAccount: (String, String) -> Unit) {
     // Android requires all images to be placed inside one of the res/drawable directories (or its variants).
     val image = painterResource(id = R.drawable.temp)
 
@@ -110,7 +110,7 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
                 onClick = {
                     // Replace with actual login logic
                     if (email.isNotEmpty() && password.isNotEmpty()) {
-                        onLoginSuccess()
+                        onLoginSuccess(email, password)
                     }
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -151,9 +151,13 @@ fun LoginScreen(onLoginSuccess: () -> Unit) {
             )
 
         }
-
+        //show registration popup if triggered
         if (showRegisterPopup) {
-            RegisterPopup (onDismissRequest = { showRegisterPopup = false})
+            RegisterPopup (
+                onDismissRequest = { showRegisterPopup = false},
+                onCreateAccount = {email, password ->
+                    createAccount(email, password)
+                })
         }
         if (showForgotPasswordPopup) {
             ForgotPassword (onDismissRequest = { showForgotPasswordPopup = false})

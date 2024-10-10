@@ -35,10 +35,11 @@ import com.example.charma.ui.theme.QuartzWhite
 import com.example.charma.ui.theme.UNCCGreen
 
 @Composable
-fun RegisterPopup(onDismissRequest: () -> Unit) {
+fun RegisterPopup(onDismissRequest: () -> Unit, onCreateAccount: (String, String) -> Unit) {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("")}
     Dialog(onDismissRequest = onDismissRequest) {
-        var email by remember { mutableStateOf("") }
-        var password by remember { mutableStateOf("")}
+
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -108,6 +109,8 @@ fun RegisterPopup(onDismissRequest: () -> Unit) {
                     Button(
                         onClick = {
                             // Register Account Login
+                            onCreateAccount(email, password) //call the callback
+                            onDismissRequest() //closes popup
                         },
                         modifier = Modifier.fillMaxWidth(),
                         colors = ButtonDefaults.buttonColors(
