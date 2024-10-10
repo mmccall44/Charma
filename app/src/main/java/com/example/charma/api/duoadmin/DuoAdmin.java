@@ -1,5 +1,5 @@
 package com.example.charma.api.duoadmin;
-//Ethan
+// ETHAN PILAND
 /*
  * Demo of the Duo Admin API
  *
